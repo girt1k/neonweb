@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+body {
+    display: flex;
+    background-color: #5a4848;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%
+}
+
+
+
+.neon img {
+    height: 100%;
+    width: 100%;
+    border: solid 3px rgba(221, 52, 52, 0.34);
+    object-fit: cover;
+}
+
+.neon:hover {
+    /*    box-shadow: 2px 30px 20px 010px rgba(219, 69, 69, 0.65);*/
+    transform: scale(1.2);
+    filter: blur(0px);
+}
+
+.neon {
+    display: flex;
+    position: relative;
+    margin: 50px;
+    /*    --clr:purple;*/
+    justify-content: center;
+    transition: .6s;
+    filter: blur(2px);
+    /*    border: 3px solid var(--clr)*/
+}
+
+.neon:hover::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: inherit;
+    box-shadow: 0 0 30px rgba(219, 69, 69, 0.65), inset 0 0 20px rgba(219, 69, 69, 0.65);
+    animation: anim 1s;
+}
+
+.neon:hover::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(219, 69, 69, 0.65);
+    top: 125px;
+    transform: perspective(6em) rotateX(6deg) scale(1.1, 0.3);
+    filter: blur(5em);
+    animation: anim 1s;
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0
+    }
+
+    10% {
+        opacity: 0.9
+    }
+
+    20% {
+        opacity: 1
+    }
+
+    30% {
+        opacity: 0.3
+    }
+
+    40% {
+        opacity: 0.6
+    }
+
+    50% {
+        opacity: 0.5
+    }
+
+    60% {
+        opacity: 1
+    }
+
+    70% {
+        opacity: 0.5
+    }
+
+    80% {
+        opacity: 0.4
+    }
+
+    90% {
+        opacity: 0.9
+    }
+
+    100% {
+        opacity: 1
+    }
+}
